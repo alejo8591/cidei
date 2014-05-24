@@ -1,0 +1,251 @@
+/* global */
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #333;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+
+/* Header */
+
+.header{
+	background-color: #3a3f43;
+	border-bottom: 14px;
+	-webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3);
+	-moz-box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3);
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3);
+	padding: 22px 0;
+}
+
+.logo{
+	background-color: #515558;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	margin: 0 auto;
+	padding: 5px 0;
+	text-align: center;
+	width: 250px;
+}
+
+.logo h1{
+	color: #fff;
+	font-weight: normal;
+	font-family: Arial, sans-serif;
+	margin-bottom: 0;
+}
+
+/* Navigation */
+
+.nav-menu,
+.portfolio > figure.columns{
+	display: none;
+}
+
+label{
+	color: #3a3f43;
+	cursor: pointer;
+	display: inline-block;
+	padding: 5px;
+}
+
+.nav-menu:checked + label{
+	color: #fff;
+	background-color: #3a3f43;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#all:checked ~ .portfolio .all,
+#develop:checked ~ .portfolio .poster,
+#test:checked  ~ .portfolio .illustration,
+#languages:checked ~ .portfolio .typography,
+#skills:checked ~ .portfolio .package{
+	display: block;
+}
+
+/* Portfolio */
+
+.portfolio{
+	margin-top: 20px;
+}
+
+.portfolio .four.columns{
+	margin-left: 0;
+	margin-right: 0;
+	width: 240px;
+}
+
+.portfolio > figure{
+	position: relative;
+	overflow: hidden;
+}
+
+.portfolio > figure img{
+	display: block;
+	max-width: 100%;
+}
+
+.portfolio figcaption{
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: rgba(58, 63, 67,.8);
+	padding: 10%;
+
+	-webkit-transform: translateX(100%);
+	-moz-transform: translateX(100%);
+	-ms-transform: translateX(100%);
+	-o-transform: translateX(100%);
+	transform: translateX(100%);
+	
+	-webkit-transition: all 350ms;
+	-moz-transition: all 350ms;
+	-o-transition: all 350ms;
+	transition: all 350ms;
+}
+
+.portfolio figcaption h4{
+	color: #fff;
+}
+
+.portfolio figcaption p{
+	color: #fff;
+	font-size: 0.9em;
+}
+
+.portfolio > figure:hover figcaption{
+	-webkit-transform: translateX(0);
+	-moz-transform: translateX(0);
+	-ms-transform: translateX(0);
+	-o-transform: translateX(0);
+	transform: translateX(0);
+}
+
+/* Footer Section */
+.footer{
+	border-top: 1px solid #ccc;
+	margin-top: 28px;
+	padding: 28px 0;
+}
+/*
+.social{
+	float: left;
+}
+
+.social .copyright{
+	color: #ccc;
+	font-size: 1em;
+	margin-bottom: 10px;
+}
+
+.social li{
+	display: inline;
+}
+
+.social li a{
+	display:  inline-block;
+	width: 48px;
+	height: 48px;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+} */
+
+/*  */
+@media only screen and (max-width: 959px){
+	label{
+		display: none;
+	}
+
+	.container{
+		width: 100%;
+	}
+
+	.portfolio .four.columns{
+		width: 25%;
+	}
+	.portfolio .all{
+		margin-bottom: 15px;
+	}
+	.portfolio > figure:before{
+		content: attr(data-category);
+		font-size: 1em;
+		padding: 8px;
+		width: 100%;
+		color: #fff;
+		display: block;
+		font-weight: bold;
+		text-transform: capitalize;
+		background-color: rgba(42, 47, 51, 0.8);
+		position: absolute;
+	}
+
+	.portfolio figcaption{
+		position: relative;
+		opacity: 1;
+
+		-webkit-transform: translateX(0%);
+		-moz-transform: translateX(0%);
+		-ms-transform: translateX(0%);
+		-o-transform: translateX(0%);
+		transform: translateX(0%);
+
+		background-color: #3a3f43;
+	}
+
+	.portfolio figure:nth-child(odd) figcaption{
+		background-color: #2a2f33;
+	}
+
+	.footer{
+		border-top: 1px solid #ccc;
+		margin-top: 42px;
+		padding: 28px;
+	}
+}
+
+
+/* Tablet portrait */
+@media only screen and (min-width: 768px) and (max-width: 959px){
+
+}
+
+/* Landscape */
+@media only screen and (min-width: 480px) and (max-width: 767px){
+	.portfolio .four.columns{
+		width: 50%;
+	}
+}
+
+/* Mobile Portrait Size */
+@media only screen and (max-width: 479px){
+	.container{
+		width: 100%;
+	}
+
+	.portfolio .four.columns{
+		width: 100%;
+	}
+
+	.footer{
+		text-align: center;
+	}
+}
+
+
+
+
+
+
+
+
+
