@@ -20,3 +20,31 @@ function otroCallback(miCallback){
 otroCallback(function(unValor){
 	console.log('Algo se imprime y es: '+ unValor);
 });
+
+/* multiples callbacks llamado en determinados casos*/
+
+function algoOcurre(callback1, callback2, callback3){
+	// Pasa la primera vez
+	callback1('Primer paso');
+
+	// Siguiente callback
+	callback2('Segundo Paso');
+
+	// Y por ultimo
+	callback3('ultimo y tercer paso');
+}
+
+// Llamado y uso de los multiples Callbacks para 'algoOcurre'
+algoOcurre(
+	function(paso1){
+		console.log(paso1);
+	},
+	function(paso2){
+		console.log(paso2);
+	},
+	function(paso3){
+		console.log(paso3);
+	}
+);
+
+
