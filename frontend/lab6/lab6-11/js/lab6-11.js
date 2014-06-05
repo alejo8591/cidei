@@ -17,7 +17,7 @@ $(document).ready(function(){
     $(this).addClass('inputs');
   });
 
-  $('#userid').focus(function(){
+  $('#username').focus(function(){
     $(this).addClass('inputs');
   });
  
@@ -33,38 +33,27 @@ $(document).ready(function(){
     $(this).addClass('inputs');
   });
   
-  $('.nid-error').addClass('error');
-  $('.nid-error').hide();
-  $('.user-error').addClass('error');
-  $('.user-error').hide();
-  $('.password-error').addClass('error');
-  $('.password-error').hide();
-  $('.conf-password-error').addClass('error');
-  $('.conf-password-error').hide();
-  $('.email-error').addClass('error');
-  $('.email-error').hide();
-  $('.food-error').addClass('error');
-  $('.food-error').hide();
-  $('.pay-error').addClass('error');
-  $('.pay-error').hide();
-  $('.city-error').addClass('error');
-  $('.city-error').hide();
-  $('#buttons #info').remove();
+  $('.nid-error, .user-error, .password-error, .conf-password-error, .email-error, .food-error, .pay-error, .city-error').addClass('error');
+  $('.nid-error, .user-error, .password-error, .conf-password-error, .email-error, .food-error, .pay-error, .city-error').hide();
+  $('#info').remove();
  
   $('.button').bind('click', function(event){
+
+    $('#info').remove();
+    $('#openModal > div').empty();
 
     var validate = new Validate();
 
     var data=$('#nid').val();
 
     if(validate.userid(data)){
-      $('#nid').next().hide();
-      $('.nid-error').next().hide();
+      $('#nid').removeClass('error').addClass('success');
+      $('.nid-error').hide();
       localStorage.setItem('nid', data);
     }
     else{
       $('#nid').next().show();
-      $('input#nid').addClass('error');
+      $('input#nid').removeClass('success').addClass('error');
       $('.nid-error').next().show();
       $('.nid-error').text('Indique su Documento de Identidad');
     }
@@ -75,6 +64,7 @@ $(document).ready(function(){
     
     if(len<1 && data === ""){
       $('#username').next().show();
+      $('#username').addClass('error');
       $('.user-error').next().show();
       $('.user-error').text('Por favor indique su(s) Nombre(s) y Apellido(s)');
     }
@@ -90,6 +80,7 @@ $(document).ready(function(){
     
     if(len<1 && len!==""){
       $('.password').next().show();
+      $('input.password').addClass('error');
       $('.password-error').next().show();
       $('.password-error').text('Indique una Contraseña');
     }
@@ -193,6 +184,7 @@ $(document).ready(function(){
   $(document).on('click', '#info', function(){
 
     $('#openModal > div').append(
+      '<a href="#close" title="Close" class="close">X</a>'+
       '<h2>Este es tu pedido</h2>' +
       '<ul>' +
       '<li>Su nombre es: ' + localStorage.getItem('username') + '</li>' +
