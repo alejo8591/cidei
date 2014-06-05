@@ -8,7 +8,6 @@ $(document).ready(function(){
       return pattern.test(email);
     },
     userid : function(uid){
-      // var pattern = new RegExp(/^[a-z0-9_]+$/); /^[0-9.]+$/
       var pattern = new RegExp( /^[0-9]+$/);
       return pattern.test(uid);
     }
@@ -97,8 +96,6 @@ $(document).ready(function(){
     else{
       $('.password').next().hide();
       $('.password-error').next().hide();
-      localStorage.setItem('password', data);
-
     }
 
     var confData=$('.conf-password').val();
@@ -122,13 +119,14 @@ $(document).ready(function(){
       else{
         $('.conf-password').next().show();
         $('.conf-password-error').hide();
+        localStorage.setItem('password', data);
       }
     }
  
     data=$('.emailadd').val();
     
     if(validate.email(data)){
-      $('.emailadd').next().hide();
+      // $('.emailadd').next().hide();
       $('.email-error').hide();
       localStorage.setItem('email', data);
     }
@@ -189,13 +187,6 @@ $(document).ready(function(){
       $('.inputs').removeClass('error');
       $('.inputs').addClass('success');
     }
-    /*
-    var meals =  JSON.parse(localStorage.getItem('meals'));
-
-    $.each(meals, function(key, value){
-      $('#userinfo').prepend('valor de ' + key + ' $' + value + ' M/Cte');
-    });
-    */
     event.preventDefault();
   });
 
@@ -218,5 +209,4 @@ $(document).ready(function(){
           $('#listMeals > ul').append('<li>El producto ' + key + ' cuesta $' + value + ' M/Cte</li>');
     });
   });
-
 });
