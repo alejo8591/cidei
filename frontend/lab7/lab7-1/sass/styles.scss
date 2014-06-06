@@ -1,0 +1,19 @@
+@import "_variables";
+
+body {
+	background : $secondary_color;
+	font-color : $primary_color;
+	width : $page_width;
+
+	h1 {
+		font-color : red; 
+	} 
+
+	.cambiar-color-rojo{
+		color : $green_color;
+	}
+
+	.cambiar-color-verde{
+		color : $red_color;
+	}
+}

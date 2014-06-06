@@ -1,0 +1,10 @@
+body {
+  background: #575757;
+  font-color: #333333;
+  width: 960px; }
+  body h1 {
+    font-color: red; }
+  body .cambiar-color-rojo {
+    color: green; }
+  body .cambiar-color-verde {
+    color: red; }
