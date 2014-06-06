@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/styles.css" />
+		<script type="text/javascript" src="../assets/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/lab6-11.js"></script>
+	</head>
+	<body>
+		<section id="contenedor">
+		<header>
+			<div id="social">
+				<p>Recuerden que los Ninja Code TV son a las 8:30 PM</p>
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+			</div>
+			<hgroup id="logo">
+				<h1><a href="" title=""><img src="ninja.png" alt="Ninja Code TV"></a></h1>
+			</hgroup>
+			<nav>
+				<ul>
+					<li><a href="">Inicio</a></li>
+					<li><a href="">Quienes Somos</a></li>
+					<li><a href="">Capítulos Anteriores</a></li>
+					<li><a href="">Próximo Capítulo</a></li>
+					<li><a href="">Contacto</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section id="slider">
+			<ul>
+				<li>
+					<img src="ninja.jpg" alt="Esto es un Ninja">
+					<div class="caption">
+						<h3>Titulo del post</h3>
+						<p>Like you, I used to think the world was this great place where everybody lived by the same standards I did, then some kid with a nail showed me I was living in his world</p>
+						<a href="" title="">Leer más</a>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section id="contenido">
+			<section id="cont">
+				<form>   
+			<fieldset>
+				<legend>Información General</legend>
+				<fieldset>
+					<div id="userinfo">
+						<span class="label">Documento de Identidad</span>
+						<input type="text" id="nid" />
+						<span class="nid-error"></span>
+
+						<span class="label">Nombre(s) y Apellido(s)</span>
+						<input type="text" id="username" />
+						<span class="user-error"></span>
+					</div>
+				</fieldset>
+				<fieldset>
+					<div id="user">
+						<span class="label">Password</span>
+						<input type="password" class="password" name="password" />
+						<span class="password-error"></span>
+
+						<span class="label">Confirmar Password</span>
+						<input type="password" class="conf-password" name="conf-password" />
+						<span class="conf-password-error"></span>
+					</div>
+					<div>
+						<span class="label">Email</span>
+						<input type="text" class="emailadd" name="emailid" />
+						<span class="email-error"></span>
+					</div>
+				</fieldset>
+				<fieldset>
+					<div id="checkboxes">
+						<span class="label">Seleccionar Alimentos</span><br>
+						<input type="checkbox"  id="pizza" name="pizza" value=5000  class="chkb">Pizza $5000 <br>
+						<input type="checkbox"  id="hotdog" name="hotdog" value=3000  class="chkb">HotDog $3000<br>
+						<input type="checkbox"  id="coke" name="coke" value=2000  class="chkb">Coca-Cola $2000<br>
+						<input type="checkbox"  id="fries" name="fries" value=3000  class="chkb">Papas Fritas $3000<br />
+						<span class="food-error"></span>
+						<br />
+						<span class="food-total"></span>
+						<br />
+					</div>
+				</fieldset>
+				<fieldset>
+					<div id="radios">
+						<span class="label">Modo de Pago</span><br>
+						<input type="radio"  name="paymode" class="radiobtn" value="Master Card">Master Card <br />
+						<input type="radio"  name="paymode" class="radiobtn" value="Visa Card">Visa Card<br />
+						<span class="pay-error"></span>
+					</div>
+				</fieldset>
+				<fieldset>
+					<div>
+						<span class="label">Ciudad</span>
+						<select id="city" class="infobox">
+							<option value="0">Seleccione una ciudad</option>
+							<option value="Barranquilla">Barranquilla</option>
+							<option value="Bogota">Bogotá</option>
+							<option value="Calí">Calí</option>
+							<option value="Cartagena">Cartagena</option>
+							<option value="Medellin">Medellin</option>
+						</select><br />
+						<span class="city-error"></span>
+					</div>
+				</fieldset>
+				<div id="buttons">
+					<button class="button" href="#">Enviar</button>
+				</div>
+		</fieldset>
+	</form> 
+		</section>
+		<footer>
+			<div class="bloque">
+				<h3>Tweets recientes</h3>
+				<ul>
+					<li>
+						<h4><a href="" title="">@alguien</a></h4>
+						<p>jajajaja que bueno</p>
+					</li>
+					<li>
+						<h4><a href="" title="">@alguien</a></h4>
+						<p>jajajaja que bueno</p>
+					</li>
+				</ul>
+			</div>
+			<div class="bloque">
+				<h4><a href="" title="@ninjacodetv">@ninjacodetv</a></h4>
+				<p>
+					Like you, I used to think the world was this great place where everybody lived by the same standards I did, then some kid with a nail showed me I was living in his world
+				</p>
+			</div>
+			<div class="bloque">
+				<h4>Contacto</h4>
+				<form action="">
+					<input type="text"><label for="">Nombre</label>
+					<input type="text"><label for="">E-mail</label>
+					<textarea name=""></textarea>
+					<input type="submit" value="Enviar">
+				</form>
+			</div>
+		</footer>	
+	</section>
+	<div id="openModal" class="modalDialog">
+		<div>
+		</div>
+	</div>
+	</body>
+</html>
