@@ -1,0 +1,16 @@
+body {
+  background: white;
+  font-color: #333333;
+  width: 960px; }
+  body .color h1 {
+    color: #402626; }
+  body .color h2 {
+    font-color: gray; }
+  body .color h3 {
+    font-color: #404040; }
+  body .color h4 {
+    font-color: #9f2020; }
+  body .color h5 {
+    font-color: #999999; }
+  body .color h6 {
+    font-color: #f6f6f6; }

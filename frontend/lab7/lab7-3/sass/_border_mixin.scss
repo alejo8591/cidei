@@ -1,0 +1,7 @@
+@mixin border_mix($roundOne: 2px, $roundTwo: 4px){
+	-webkit-border-radius : $roundOne $roundTwo;
+	-khtml-border-radius: $roundOne $roundTwo;
+	-moz-border-radius: $roundOne $roundTwo;
+	-o-border-radius: $roundOne $roundTwo;
+	border-radius: $roundOne $roundTwo;
+}
