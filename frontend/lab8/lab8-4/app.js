@@ -32,10 +32,8 @@ app.get('/hello', function(req, res){
 });
 
 app.post('/name', function(req, res){
-    res.set({"X-Head" : req.body.name});
-    res.send('Su nombre es: ' + function(){for(key in req){key}});
+    res.send('Su nombre es: ' + req.body.name);
 });
-
 
 app.use('/users', users);
 
