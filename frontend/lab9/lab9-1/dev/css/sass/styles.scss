@@ -1,0 +1,25 @@
+@import "compass/reset";
+@import "compass/css3";
+
+div#intro{
+	float: left;
+	width: 100px;
+	border-right: 1px solid #333;
+	height: 300px;
+	padding: 10px;
+	overflow: scroll-y;
+	@include border-radius(4px);
+}
+
+div#chat{
+	float: left;
+	width: 400px;
+	height: 250px;
+	overflow: scroll-y;
+	padding: 10px;
+	@include border-radius(5px);
+}
+
+#data{
+	width: 200px;
+}
