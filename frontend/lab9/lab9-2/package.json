@@ -7,6 +7,10 @@
   },
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-contrib-compass": "^0.8.0"
+    "grunt-contrib-compass": "^0.8.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-htmlhint": "^0.4.0",
+    "grunt-jsdoc": "^0.5.4",
+    "grunt-rev": "^0.1.0"
   }
 }
