@@ -41,10 +41,9 @@ node_modules
 # Mac OS X index
 .DS_Store
 
-backend/
-
+# Floobits files
 .floo
 .flooignore
-
+# Floobits backup files
 .floo_backup
 .flooignore_backup
