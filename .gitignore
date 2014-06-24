@@ -40,3 +40,11 @@ node_modules
 
 # Mac OS X index
 .DS_Store
+
+backend/
+
+.floo
+.flooignore
+
+.floo_backup
+.flooignore_backup
