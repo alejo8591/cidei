@@ -8,4 +8,4 @@ while data != "":
 	number = float(data)
 	sum+=number
 
-print "Esa suma extraña es: ", sum
+print "Esa suma extrana es: ", sum
