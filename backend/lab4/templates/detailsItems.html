@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> {{title}} </title>
+	<head>
+	<body>
+		<h1> <strong> {{title}} </strong> </h1>
+		
+		<div>
+			<ul> 
+				<li> Nombre : {{item.name}} </li>
+				<li> Categoria : {{item.category.name}} </li>
+				<li> Listado : {{item.get_listing_display}} </li>
+				<li> Departamento : {{item.department}} </li>
+				<li> Creado : {{item.posted_on|date}} </li>
+				<li> Modificado : {{item.update_item|date}} </li>
+
+			</ul>
+			<h2> Descripcion</h2>
+			<p> {{item.description|linebreaksbr}} </p>
+		</div>
+
+
+	</body>
+</html>

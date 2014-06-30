@@ -1,5 +1,5 @@
 """
-Django settings for lab3 project.
+Django settings for cidei project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1_xwg$ym2$^$hf3#5+e8ar4+mjbiqpj_bs@jlwm@%y4eqm5i0_'
+SECRET_KEY = 'u8e3icyrxf7q9crgv+&l6srwkx6(fsu6)z_ovk$v34+15&or=9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'autofixture',
-    'list',
+    'app',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -49,9 +49,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'lab3.urls'
+ROOT_URLCONF = 'cidei.urls'
 
-WSGI_APPLICATION = 'lab3.wsgi.application'
+WSGI_APPLICATION = 'cidei.wsgi.application'
 
 
 # Database
@@ -60,7 +60,7 @@ WSGI_APPLICATION = 'lab3.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'cidei.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'lab4.sqlite3'),
     }
 }
 
@@ -83,8 +83,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
-
-TEMPLATE_DIRS = (
-    TEMPLATE_PATH,
+# define la ruta de los templates html con la ruta base de la aplicacion
+# BASE_DIR esta definiendo el directorio del proyecto
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates') #concatena la ruta del proyecto con templates
+TEMPLATE_DIRS = ( #palabra reservada para definir los archivos de templates
+    TEMPLATE_PATH, 
 )

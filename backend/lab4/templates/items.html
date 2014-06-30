@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> {{title}} </title>
+	<head>
+	<body>
+		<p> <strong> {{title}} </strong> </p>
+
+		<p> <strong> Items </strong> </p>
+		<div>
+			{% for itm in item %}
+			 	<li> <a href="{{itm.id}}"> {{itm.name|capfirst}} </a> </li>
+			{% endfor %}
+		</div>
+
+	</body>
+</html>

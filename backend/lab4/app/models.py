@@ -1,12 +1,13 @@
 from django.db import models
 
-L_TYPES = (
-	('t', 'Para resolver'),
-	('l', 'Para revisar'),
-	('p', 'No resuelto'),
-	)
-	
 # Create your models here.
+
+L_TYPES = (
+	('t', 'Todas'),
+	('n', 'Ninguna'),
+	('r', 'Resuelto'),
+)
+
 class Category(models.Model):
 	name = models.CharField(max_length=255)
 	slug = models.SlugField(max_length=255, unique=True)
@@ -21,10 +22,7 @@ class Item(models.Model):
 	department = models.CharField(max_length=255)
 	description = models.TextField()
 	posted_on = models.DateTimeField(auto_now_add=True)
+	update_item = models.DateTimeField()
 
-class Pictures(models.Model):
-	item = models.ForeignKey(Item)
-	url = models.CharField(max_length=255)
-
-
-
+	def __unicode__(self):
+		return "%s - %s - %s - %s - %s" % (self.name, self.category, self.department, self.description, self.update_item)
