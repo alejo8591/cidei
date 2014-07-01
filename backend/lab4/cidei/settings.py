@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'u8e3icyrxf7q9crgv+&l6srwkx6(fsu6)z_ovk$v34+15&or=9'
+SECRET_KEY = ')^hs9c58s$2^p4q&q@@)r*6ucou81l%8y2$3_euj!ky7frc)_a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -60,7 +60,7 @@ WSGI_APPLICATION = 'cidei.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'lab4.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'cidei.sqlite3'),
     }
 }
 
@@ -83,9 +83,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# define la ruta de los templates html con la ruta base de la aplicacion
-# BASE_DIR esta definiendo el directorio del proyecto
-TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates') #concatena la ruta del proyecto con templates
-TEMPLATE_DIRS = ( #palabra reservada para definir los archivos de templates
-    TEMPLATE_PATH, 
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+
+TEMPLATE_DIRS = (
+    TEMPLATE_PATH,
 )

@@ -14,6 +14,13 @@
 		</ul>
 		<h2>Descripción</h2>
 		<p>{{ item.description|linebreaksbr }}</p>
-				<p>{{ item.description|slugify }}</p>
+		{% if count_pictures == 0 %}
+			<h2>No tiene imagenes subidas</h2>
+		{% else %}
+			{% for picture in pictures %}
+			<h2>Tiene {{ count_pictures }} Imagenes subidas</h2>
+			<img src="{{ picture.url }}" alt="">
+			{% endfor %}
+		{% endif %}
 	</body>
 </html>

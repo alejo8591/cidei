@@ -5,7 +5,8 @@
 	</head>
 	<body>
 		<h1>{{ title }}</h1>
-		<a href="{% url 'categories' %}">Categorias</a>
-		<a href="{% url 'items' %}">Items</a>
+		<ul>
+			<li>Nombre: {{ category.name }}</li>
+			<li>Categoria: {{ category.slug }}</li>
 	</body>
 </html>

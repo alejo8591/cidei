@@ -3,13 +3,12 @@ from autofixture import generators, register, AutoFixture
 
 import random
 
-nouns = ("Hardware", "Software", "Test Software", "Test Hardware", "Apps", "BigData",)
-lista = ('t', 'l', 'p')
+nouns = ("Hardware", "Software", "Test-Software", "Test-Hardware", "Apps", "BigData",)
 
 class CategoryFixture(AutoFixture):
 	field_values = {
 		'name' : generators.random.choice(nouns),
-		'slug' : generators.SlugGenerator('cidei'), 
+		'slug' : generators.SlugGenerator('cidei'),
 	}
 
 class ItemFixture(AutoFixture):
@@ -21,7 +20,6 @@ class ItemFixture(AutoFixture):
 #		'description' : ,
 #		'posted_on' : ,
 		'update_item' : generators.DateTimeGenerator(),
-
 	}	
 		
 register(Category, CategoryFixture)
