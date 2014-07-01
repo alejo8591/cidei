@@ -22,5 +22,8 @@
 			<img src="{{ picture.url }}" alt="">
 			{% endfor %}
 		{% endif %}
+		<br>
+		<a href="{% url 'items' %}">Regresar a la lista de items</a>
+		<a href="{% url 'index' %}">Volver al inicio</a>
 	</body>
 </html>

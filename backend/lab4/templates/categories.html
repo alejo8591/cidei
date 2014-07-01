@@ -9,6 +9,7 @@
 		{% for category in categories %}
 			<li><a href="{% url 'category' category.slug %}">{{ category.name|capfirst }}</a></li>
 		{% endfor %}
-		</ul>
+		</ul><br>
+		<a href="{% url 'index' %}">Volver al inicio</a>
 	</body>
 </html>
