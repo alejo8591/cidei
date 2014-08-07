@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<script src="{% static "js/jquery-1.11.1.min.js" %}"></script>
+		<script src="{% static "js/jquery.cookie.js" %}"></script>
+		<script src="{% static "js/lab6.js" %}"></script>
+	</head>
+	<body>
+		{% if user.is_authenticated %}
+			<a href="{% url 'logout' %}">Salir del sistema</a><br />
+			<h1>{{ title }}</h1>
+			{# <a href="/categories/">Categorias</a> #}
+			<a href="{% url 'categories' %}">Categorias</a>
+			{# <a href="/items/">Items</a><br> #}
+			<a href="{% url 'items' %}">Items</a><br>
+			<h1>Crear elementos</h1>
+			{#<a href="{% url 'add-category' %}">Crear Categoria</a> #}
+			<a href="{% url 'add-category' %}">Crear Categoria</a>
+			{# <a href="/items/add/">Crear Categoria</a> #}
+			<a href="{% url 'add-item' %}">Adicionar item</a>
+		{% else %}
+			<a href="{% url 'register' %}">Regsitrarse</a>
+			<a href="{% url 'login' %}">Ingresar al sistema</a>
+		{% endif %}
+
+	</body>
+</html>
