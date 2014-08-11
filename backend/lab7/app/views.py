@@ -44,7 +44,7 @@ def add_category(request):
 	else:
 		form = CategoryForm()
 
-	context = Context({'title':'Creación de categorias', 'form': form})
+	context = Context({'title':'Creación de categorias', 'form': form, 'hole' : "Saludos"})
 	return render_to_response('app/add-category.html', context, context_instance=RequestContext(request))
 
 @login_required()

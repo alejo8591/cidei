@@ -79,5 +79,36 @@ $(document).ready(function(){
 			});
 		}
 	});
+
+
+	$('#id_name').autocomplete({
+		source: function(req, res){
+			console.log('listo para el ajax', typeof(req));
+			$.ajax({
+				url: '/accounts/usernames/' + req.term + '/',
+				type: 'GET',
+				datatype: 'JSON',
+				success: function(data){
+
+					var results = [];
+
+					console.log('consulta realizada', data);
+
+					$.each(data, function(key, value){
+						console.log(key, value);
+						results.push(value.username);
+					});
+
+					console.log(results);
+
+					res(results);
+
+				},
+				error: function(xhr, errmsg, err){
+					alert(xhr.status + ": " + xhr.responseText);
+				}
+			});
+		}
+	});
 });
 

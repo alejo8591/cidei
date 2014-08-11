@@ -7,4 +7,9 @@
 		{# Comentario en el template #}
 		<input type="submit" value="{{ info_button }}" />
 	</form>
+	{% if hole == "Saludos" %}
+	{% include "add-test.html" %}
+	{% else %}
+		<h2> no carga nada </h2>
+	{% endif %}
 {%endblock %}

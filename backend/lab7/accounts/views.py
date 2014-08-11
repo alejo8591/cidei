@@ -12,9 +12,9 @@ from django.contrib.auth import logout
 
 from accounts.forms import UserForm, UserProfileForm
 
-from accounts.serializers import UserProfileSerializer, UserSerializer
+from accounts.serializers import UserProfileSerializer, UserSerializer, UsernameSerializer
 
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 
 # Create your views here.
 def register(request):
@@ -83,4 +83,15 @@ class UserViewSet(viewsets.ModelViewSet):
 class UserProfileViewSet(viewsets.ModelViewSet):
 	queryset = UserProfile.objects.all()
 	serializer_class = UserProfileSerializer
+
+class UsernameViewSetOne(generics.ListAPIView):
+	serializer_class = UsernameSerializer
+
+	def get_queryset(self):
+
+		print self.kwargs['username']
+
+		username = self.kwargs['username']
+
+		return User.objects.filter(username__istartswith=username)
 
