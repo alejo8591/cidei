@@ -4,12 +4,11 @@ from django.template import Context, RequestContext
 from app.models import Item, Category, Picture
 from app.forms import CategoryForm, ItemForm
 # Modulo serializador de QuerySets para Django
-from django.http import HttpResponse, HttpResponseForbidden
+from django.http import HttpResponse
 from django.core.serializers import serialize
 import json
 
 from django.contrib.auth.decorators import login_required
-# for autocomplete
 
 def index(request):
 	context = Context({'title' : 'Hola CIDEI'})
@@ -165,23 +164,6 @@ def ajax_items(request):
 		return HttpResponse({'error' : 'Hubo un error'}, content_type='application/json')
 
 
-def auto_complete_slug(request):
-	
-	if request.is_ajax():
-	#if request.method == 'POST':
 
-		query = Category.objects.filter(slug__istartswith=request.body)
 
-		objects = []
 
-		for i in query:
-			print i.slug
-			objects.append(i.slug)
-
-		print objects
-
-		#print json.dumps(objects)
-
-		return HttpResponse(json.dumps(objects), content_type='application/json')
-
-	return HttpResponse(json.dumps({"objects" :"error"}), content_type='application/json')

@@ -90,9 +90,6 @@ TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 
 TEMPLATE_DIRS = (
     TEMPLATE_PATH,
-    # add for inherit templates
-    os.path.join(TEMPLATE_PATH, 'accounts'),
-    os.path.join(TEMPLATE_PATH, 'app'),
 )
 
 STATICFILES_DIRS = (

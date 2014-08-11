@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>{{ title }}</title>
-	</head>
-	<body>
-		<h1>{{ title }}</h1>
-		<form action="." method="POST">
-		{% csrf_token %}
-			{{form.as_p }}
-			{# Comentario en el template #}
-			<input type="submit" value="{{ info_button }}" />
-		</form>
-	</body>
-</html>
+{% extends "../accounts/base.html" %}
+{% block body %} 
+	<h1>{{ title }}</h1>
+	<form action="." method="POST">
+	{% csrf_token %}
+		{{form.as_p }}
+		{# Comentario en el template #}
+		<input type="submit" value="{{ info_button }}" />
+	</form>
+{%endblock %}
