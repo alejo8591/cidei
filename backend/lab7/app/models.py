@@ -14,7 +14,7 @@ class Category(models.Model):
     update_category = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
-		return "%s - %s" % (self.name, self.slug)
+		return "%s" % (self.slug)
 
 class Item(models.Model):
     listing = models.CharField(max_length=1, choices=L_TYPES, default='T')

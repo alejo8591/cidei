@@ -174,13 +174,15 @@ def auto_complete_slug(request):
 
 		objects = []
 
+		print type(query)
+
 		for i in query:
 			print i.slug
 			objects.append(i.slug)
 
 		print objects
 
-		#print json.dumps(objects)
+		print json.dumps(objects)
 
 		return HttpResponse(json.dumps(objects), content_type='application/json')
 
