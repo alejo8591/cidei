@@ -1,0 +1,53 @@
+upstream testproject_app {
+	# El upstream es el que conecta gunicorn con nginx
+	server unix:/home/django/run/gunicorn.sock fail_timeout=0;
+}
+
+server {
+	# puerto de escucha para las peticiones HTTP
+	listen 80;
+
+	# Dominios que responden a esta configuracion
+	server_name example.com ejemplo.com ejemplo.co example.com.co;
+	
+	# Configuracion customizada para la subida de statics
+	client_body_in_file_only clean;
+    	client_body_buffer_size 32K;
+ 
+    	client_max_body_size 300M;
+ 
+    	sendfile on;
+    	send_timeout 300s;
+	
+	# logs de eventos, tanto acceso como errores
+	access_log /home/django/logs/nginx-access.log;
+	error_log /home/django/logs/nginx-error.log;
+
+	# NGINX sirviendo estaticos
+	location /static/ {
+		alias /home/django/testproject/static/;
+	}
+
+	location /media/ {
+		alias /home/django/testproject/media/;
+	}		
+	
+	location / {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+ 
+        proxy_set_header Host $http_host;
+
+        proxy_redirect off;
+
+        if (!-f $request_filename) {
+            	proxy_pass http://testproject_app;
+            	break;
+        }
+    }
+ 
+    	# Error pages
+    	error_page 500 502 503 504 /500.html;
+    	location = /500.html {
+        	root /home/django/testproject/static/;
+    	}
+}
