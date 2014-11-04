@@ -45,8 +45,8 @@ input {
 
 .label{
 	float: left;
-	width: 300px;
-	display: block;
+	width: 200px;
+	/*display: block;*/
 }
 
 .infobox{
