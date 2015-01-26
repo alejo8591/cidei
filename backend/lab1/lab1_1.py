@@ -23,15 +23,15 @@ TAX_ONE = 0.03
 
 # Entradas de teclado
 
-food = input('Ingrese el valor del Alimento')
-amount_food = input('Ingrese la cantidad de Alimentos')
+food = int(input('Ingrese el valor del Alimento'))
+amount_food = int(input('Ingrese la cantidad de Alimentos'))
 
 # Computaciones
 
 total = (food * amount_food) * (TAX + TAX_ONE)
 
 # Salidas 
-print "El total de los alimentos es: ", total
+print("El total de los alimentos es: ", total)
 
 
 
