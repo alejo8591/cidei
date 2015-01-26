@@ -12,7 +12,7 @@ class AddressBook(object):
 
 	def print_contacts(self):
 		for contact in self._data_store:
-			print contact
+			print(contact)
 
 class Contact(object):
 	# Constructor
