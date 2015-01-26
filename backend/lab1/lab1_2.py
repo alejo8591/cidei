@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 Program: lab1_2.py
@@ -9,7 +10,7 @@ Author: Alejandro Romero
 	Se muestra en linea de comandos la valoración para el rando de la calificación
 """
 
-number  = input("Ingrese el número de su calificación: ")
+number  = int(input("Ingrese el número de su calificación: "))
 
 if number > 89 :
 	letter = 'S'
@@ -20,4 +21,4 @@ elif number > 69:
 else:
 	letter = 'Un caso perdido'
 
-print "Su calificación esta dentro del rango: ", letter
+print("Su calificación esta dentro del rango: ", letter)
