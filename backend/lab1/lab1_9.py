@@ -33,8 +33,8 @@ def prepositionalPhrase():
 
 def main():
 	""" El usuario genera el número de frases a construir """
-	number = input("Ingrese el número de frases a Construir: ")
-	for count in xrange(number):
+	number = int(input("Ingrese el numero de frases a Construir: "))
+	for count in range(number):
 		print(sentences())
 
 main()
