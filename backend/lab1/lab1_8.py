@@ -15,5 +15,5 @@ else:
 		remainder = decimal % 2
 		decimal = decimal / 2
 		bstring = str(remainder) + bstring
-		print "%5d%8d%12s" % (decimal, remainder, bstring)
+		print("%5d%8d%12s" % (decimal, remainder, bstring))
 	print("La representación binaria es: ", bstring)
