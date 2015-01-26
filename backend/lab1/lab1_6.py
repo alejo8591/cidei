@@ -1,8 +1,8 @@
 # Importante modulo completo "random" en python
 import random
 
-smaller = input("Ingrese el numero pequeno: ")
-large =  input("Ingrese el numero grande o mayor: ")
+smaller = int(input("Ingrese el numero pequeno: "))
+large =  int(input("Ingrese el numero grande o mayor: ")) 
 
 my_random_number = random.randint(smaller, large)
 
