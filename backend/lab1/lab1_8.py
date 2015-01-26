@@ -9,7 +9,7 @@ decimal = input("Ingrese el número decimal a Convertir: ")
 if decimal == 0:
 	print(0)
 else:
-	print "Resto del cociente binario"
+	print("Resto del cociente binario")
 	bstring = ""
 	while decimal > 0:
 		remainder = decimal % 2
