@@ -3,7 +3,7 @@ File: lab1_7.py
 Para que no se les olvide esto es un comentario del tipo Docstring
 """
 
-bstring = raw_input("Ingrese el string de bits: ")
+bstring = input("Ingrese el string de bits: ")
 
 decimal = 0
 
@@ -13,4 +13,4 @@ for digit in bstring:
 	decimal = decimal + int(digit) * 2 ** exponent
 	exponent = exponent - 1
 
-print "El valor entero es: ", decimal
+print("El valor entero es: ", decimal)
