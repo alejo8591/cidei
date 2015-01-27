@@ -8,7 +8,7 @@ class AddressBook(object):
 		self.data_store.append(contact)
 
 	def all_contacts(self):
-		return self._data_store
+		return self.data_store
 
 	def print_contacts(self):
 		for contact in self._data_store:
