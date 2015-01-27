@@ -1,18 +1,18 @@
 class AddressBook(object):
 	""" constructor para clases en Python """
 	def __init__(self):
-		self._data_store = []
+		self.data_store = []
 
 	def add_contact(self, contact):
 		""" Adicionando un contacto """
-		self._data_store.append(contact)
+		self.data_store.append(contact)
 
 	def all_contacts(self):
 		return self._data_store
 
 	def print_contacts(self):
 		for contact in self._data_store:
-			print contact
+			print(contact)
 
 class Contact(object):
 	# Constructor
@@ -44,7 +44,7 @@ class Bussines(Contact):
 	# Imprimir todos los resultados de la lista de empleados
 	def print_employees(self):
 		for e in self._employees:
-			print e
+			print(e)
 	# Representa string de una clase, que a su vez un objeto
 	def __str__(self):
 		return "Tarjeta de negocios para empleado: %s - %s - %s" % (self._name, self._email, self._phone)
