@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.col {
+				color : red;
+				font-size: 20px;
+			}
+			.cal{
+				color: red;
+				font-size: 22px;
+			}
+		</style>
+		<title>{{ title }}</title>
+	</head>
+	<body>
+		<h1>{{ title }}</h1>
+		<form action="." method="POST">
+		{% csrf_token %}
+			{{form.as_p }}
+			{# Comentario en el template #}
+			<input type="submit" value="Adicionar Item" />
+		</form>
+	</body>
+</html>

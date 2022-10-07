@@ -1,0 +1,31 @@
+#!/bin/bash
+ 
+NAME="testproject_app" # Nombre del proyecto
+DJANGODIR=/home/django/testproject # Directorio del proyecto
+SOCKFILE=/home/django/run/gunicorn.sock # ruta Sockfile para NGINX
+USER=django # Usuario que ejecuta las instancias
+GROUP=django # Grupo del usuario que ejecuta las instancias
+NUM_WORKERS=3 # 2 * CPUs + 1
+DJANGO_SETTINGS_MODULE=testproject.settings # Modulo settings de testproject 
+DJANGO_WSGI_MODULE=testproject.wsgi # Nombre de la aplicacion para WSGI
+
+echo "Starting $NAME as `whoami`"
+
+# Activando el ambiente virtual
+cd $DJANGODIR
+source ../venv/bin/activate
+export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
+export PYTHONPATH=$DJANGODIR:$PYTHONPATH
+
+# Creando el directorio del archivo gunicorn.sock por si no existe
+RUNDIR=$(dirname $SOCKFILE)
+test -d $RUNDIR || mkdir -p $RUNDIR
+
+# Comando que ejecuta supervisor para correr el servidor gunicorn
+exec ../venv/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
+--name $NAME \
+--workers $NUM_WORKERS \
+--user=$USER --group=$GROUP \
+--bind=unix:$SOCKFILE \
+--log-level=debug \
+--log-file=-

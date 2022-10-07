@@ -1,0 +1,15 @@
+{% extends "../accounts/base.html" %}
+{% block body %} 
+	<h1>{{ title }}</h1>
+	<form action="." method="POST">
+	{% csrf_token %}
+		{{form.as_p }}
+		{# Comentario en el template #}
+		<input type="submit" value="{{ info_button }}" />
+	</form>
+	{% if hole == "Saludos" %}
+	{% include "add-test.html" %}
+	{% else %}
+		<h2> no carga nada </h2>
+	{% endif %}
+{%endblock %}

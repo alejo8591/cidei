@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<script src="{% static "js/jquery-1.11.1.min.js" %}"></script>
+		<script src="{% static "js/jquery.cookie.js" %}"></script>
+		<script src="{% static "js/lab7.js" %}"></script>
+	</head>
+	<body>
+		<h1>{{ title }}</h1>
+		<ul>
+			<li>Nombre: {{ item.name }}</li>
+			<li>Categoria: {{ item.category.name }}</li>
+			<li>Listado: {{ item.get_listing_display }}</li>
+			<li>Departamento: {{ item.department }}</li>
+			<li>Creado: {{ item.posted_on|date }}</li>
+		</ul>
+		<h2>Descripción</h2>
+		<p>{{ item.description|linebreaksbr }}</p>
+		{% if count_pictures == 0 %}
+			<h2>No tiene imagenes subidas</h2>
+		{% else %}
+			{% for picture in pictures %}
+			<h2>Tiene {{ count_pictures }} Imagenes subidas</h2>
+			<img src="{{ picture.url }}" alt="">
+			{% endfor %}
+		{% endif %}
+		<br>
+		<a href="{% url 'items' %}">Regresar a la lista de items</a>
+		<a href="{% url 'index' %}">Volver al inicio</a>
+		<br>
+		<a href="#" id="getAllItems">Traer el resto de items a través de AJAX con Django</a>		
+		<div id="resultAllItems"></div>
+	</body>
+</html>
